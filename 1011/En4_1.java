@@ -1,21 +1,28 @@
 public class En4_1 {
     public static void main(String[] args) {
-        Item pencilA  = new Item("umi-hb-001", "umi HB", "三菱鉛筆", 120);
-        Item pencilB  = new Item("umi-hb-001", "umi HB", "三菱鉛筆", 120);
-        Item pencilC  = new Item("umi-hb-001", "umi 2B", "四菱鉛筆", 120);
-        Item pencilD  = new Item("umi-hb-001", "umi HB", "三菱鉛筆", 220);
+        Item pencil = new Item("p-hb-001", "Pokemon pencil", "Nintendo", 1980);
+        Item pencil2 = new Item("p-hb-001", "Pokemon pencil", "Nintendo", 1980);
+        Item pencil3 = new Item("p-hb-001", "Pokemon pencil", "Sony", 1980);
+        Item pencil4 = new Item("p-hb-001", "Pokemon pencil", "Nintendo", 3000);
+        Item pencil5 = new Item("p-hb-777", "Pokemon pencil", "Nintendo", 1980);
+        Item pencil6 = new Item("p-hb-001", "Pachimon pencil", "Nintendo", 1980);
 
-        checkEquals(pencilA, pencilB);
-        checkEquals(pencilA, pencilC);
-        checkEquals(pencilC, pencilB);
-        checkEquals(pencilA, pencilD);
-        }
+        checkEquals(pencil, pencil2);
+        checkEquals(pencil, pencil3);
+        checkEquals(pencil, pencil4);
+        checkEquals(pencil, pencil5);
+        checkEquals(pencil, pencil6);
+    }
 
     public static void checkEquals(Item item1, Item item2) {
         if (item1.equals(item2)) {
-            System.out.println(item1.getName() + "と" + item2.getName() + "は等しいです");
+            print(String.format("\"%s\" and \"%2s\" is equal", item1.getName(), item2.getName()));
         } else {
-            System.out.println(item1.getName() + "と" + item2.getName() + "は等しくないです");
+            print(String.format("\"%s\" and \"%2s\" is not equal", item1.getName(), item2.getName()));
         }
+    }
+
+    public static void print (Object obj) {
+        System.out.println(obj);
     }
 }
